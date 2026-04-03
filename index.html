@@ -38,44 +38,19 @@
       justify-content: center;
       margin: 0 auto 28px;
       font-size: 36px;
-    }
-    .approve .icon-wrap {
+      color: white;
       background: linear-gradient(135deg, #00c853, #69f0ae);
       box-shadow: 0 0 40px rgba(0,200,83,0.3);
-    }
-    .reject .icon-wrap {
-      background: linear-gradient(135deg, #e53935, #ff5252);
-      box-shadow: 0 0 40px rgba(229,57,53,0.3);
     }
     h1 { color: #ffffff; font-size: 22px; font-weight: 700; margin-bottom: 12px; }
     p { color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.6; }
   </style>
 </head>
 <body>
-  <div class="card" id="card">
-    <div class="icon-wrap" id="icon"></div>
-    <h1 id="title"></h1>
-    <p id="msg"></p>
+  <div class="card">
+    <div class="icon-wrap">✓</div>
+    <h1>Action validée !</h1>
+    <p>La commande a bien été transmise à l'IA. Le workflow continue en arrière-plan, tu peux fermer cet onglet.</p>
   </div>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const action = params.get('action');
-    const card = document.getElementById('card');
-    const icon = document.getElementById('icon');
-    const title = document.getElementById('title');
-    const msg = document.getElementById('msg');
-
-    if (action === 'reject') {
-      card.classList.add('reject');
-      icon.textContent = '✕';
-      title.textContent = 'Mail rejeté';
-      msg.textContent = 'La réponse n\'a pas été envoyée. Tu peux fermer cet onglet.';
-    } else {
-      card.classList.add('approve');
-      icon.textContent = '✓';
-      title.textContent = 'Mail envoyé !';
-      msg.textContent = 'La réponse a bien été transmise. Tu peux fermer cet onglet.';
-    }
-  </script>
 </body>
 </html>
